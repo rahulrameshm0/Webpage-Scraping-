@@ -55,6 +55,7 @@ class LaptopsSpider(scrapy.Spider):
             products = json.loads(laptops_data)
 
             for product in products:
+                print(product)
                 name = product.get("title")          # readable product name
                 price = product.get("price")
                 description = product.get("description")
@@ -66,3 +67,4 @@ class LaptopsSpider(scrapy.Spider):
                     "Description": description,
                     "Reviews": reviews,
                 }
+                break
