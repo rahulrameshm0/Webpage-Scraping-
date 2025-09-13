@@ -17,7 +17,7 @@ class AmazonDataSpider(scrapy.Spider):
 
     def parse(self, response):
         products = response.xpath('//div[@data-component-type="s-search-result"]')
-        self.logger.info(f"Found {len(products)} products on this page")
+        # self.logger.info(f"Found {len(products)} products on this page")
 
         for idx, product in enumerate(products, start=1):
             title = product.xpath('.//a[contains(@class, "a-link-normal")]/h2[contains(@class, "a-text-normal")]/span/text()').get()
